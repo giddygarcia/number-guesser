@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Guesser :)</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+		<header>Number Guesser Game!</header>
+	<div class="container">
+		<div class="box-wrapper">
+			<div class = "box" id="computer-box">
+				<div class="name-label">Computer</div>
+				<div class="score-label"> Score: <span id="computer-score">0</span> </div>
+				<div class="guess" id="computer-guess"> ? </div>			
+			</div>
+
+			<div class = "box" id="round-box">
+				<div class="name-label">Round <span id="round-number"></span></div>
+				<div class="target-label"> Target Number: <span id="target-number">?</span> </div>
+			</div>
+
+			<div class = "box" id="player-box">
+				<div class="name-label"><span id="player-name">You</span></div>
+				<div class="score-label"> Score: <span id="player-score">0</span> </div>
+				<div class="guess" id="player-guess"> 0 </div>	
+				<button class="num-control left" id="btn-sub" disabled> - </button>		
+				<button class="num-control right" id="btn-add"> + </button>
+				<button class="btn-text" id="btn-guess"> Make this Guess </button>
+			</div>
+		</div>
+
+			<button class="btn-text" id="btn-next" disabled> Next Round </button>
+
+	</div>
+
+		<div class="instructions">
+			<div class="instruction">
+				Step 1
+			</div>
+			<div class="instruction">
+				Step 2
+			</div>
+			<div class="instruction">
+				Step 3
+			</div>
+		</div>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+</body>
+</html>

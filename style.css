@@ -1,0 +1,111 @@
+body {
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+}
+
+header {
+	text-align: center;
+	font-weight: 900;
+	font-size: 30pt;
+	color: #001f3f;
+	padding: 10px;
+	margin: 20px;
+	margin-bottom: 40px;
+}
+
+.container {
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.box-wrapper {
+	height: 300px;
+	margin: 10px auto;
+}
+.box {
+	float: left;
+	width: 33.3%;
+	display: inline-block;
+	box-sizing: border-box;
+	margin-right: 10px;
+	border-radius: 10px; 
+}
+
+#computer-box {
+	background-color: #DDDDDD;
+	height: inherit;
+}
+#round-box {
+	margin-top: 100px;
+	width: inherit;
+	float: none; 
+}
+#player-box {
+	border: 5px solid #39CCCC;
+	float: right;
+}
+
+.name-label {
+	margin-top: 5px;
+}
+.guess {
+	margin: 50px auto;
+	font-size: 30pt;
+}
+
+.name-label {
+	font-weight: 700;
+	font-size: 20pt;
+}
+
+.num-control {
+	background-color: #39CCCC;
+	font-size: 18pt;
+	width: 50px;
+	margin: 0px 0px;
+	border-radius: 20px;
+	border: none;
+}
+
+.left { cursor: vertical-text; }
+
+.right { cursor: crosshair; }
+
+.btn-text {
+	display: flex;
+	margin: 5px auto;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+
+#btn-guess {
+	background-color: #39CCCC;
+	font-size: 12pt;
+	font-weight: 700;
+}
+
+#btn-next {
+	display: block;
+	margin: 5px auto;
+	font-size: 20pt;
+}
+
+.instructions {
+	width: 100%;
+	height: 30px;
+	color: white;
+	background-color: #001f3f;
+	bottom: 0;
+	position: absolute;
+	padding: 30px 0px;
+}
+
+.instruction {
+	text-align: center;
+	float: left;
+	width: 33.3%;
+}
