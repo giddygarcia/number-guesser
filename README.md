@@ -1,6 +1,6 @@
-#number-guesser  
+# number-guesser  
 
-###overview  
+### overview  
 Recreating and enhancing an interactive number guesser found on CodeAcademy.  
 In pursuit of learning how to make interactive websites with JavaScript and learning its basics.   
 <br/>
