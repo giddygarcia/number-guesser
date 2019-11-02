@@ -1,6 +1,22 @@
-let playerScore = 0;
-let computerScore = 0;
+let target; 
+let targetNumDisplay = document.getElementById('target-number');
+
 let currentRoundNumber = 1;
+let roundNumDisplay = document.getElementById('round-number');
+
+let playerScore = 0;
+let playerScoreLabel = document.getElementById('player-score-label');
+let playerScoreDisplay = document.getElementById('player-score');
+let playerGuessInput = document.getElementById('player-guess');
+
+let computerScore = 0;
+let computerScoreLabel = document.getElementById('computer-score-label');
+let computerScoreDisplay = document.getElementById('computer-score');
+let computerGuessDisplay = document.getElementById('computer-guess');
+let computerWinsDisplay = document.getElementById('computer-wins');
+
+let guessBtn = document.getElementById('guess-btn');
+let nextRoundBtn = document.getElementById('next-btn');
 
 const generateTarget = () => {
 	return Math.floor(Math.random() * 10);
@@ -23,14 +39,25 @@ const updateScore = (winner) => {
 		computerScore++;
 }
 
+const compareScore = (playerScore, computerScore) => {
+	if (playerScore >= computerScore) {
+		playerScoreLabel.style.backgroundColor = '#FFDC00';
+		computerScoreLabel.style.backgroundColor = '';
+	}
+	else {
+		playerScoreLabel.style.backgroundColor = '';
+		computerScoreLabel.style.backgroundColor = "#FFDC00"; 
+	}
+}
+
 const newRound = () => {
 	nextRoundBtn.setAttribute('disabled', true);
 	guessBtn.removeAttribute('disabled');
 	addButton.removeAttribute('disabled');
 
 	targetNumDisplay.innerText = '?';
-	computerGuessDisplay.innerText = '?';
 	playerGuessInput.innerText = '0';
+	computerGuessDisplay.innerText = '?';
 	computerWinsDisplay.innerText = '';
 	guessBtn.innerText = 'Make This Guess';
 	guessBtn.style.backgroundColor = '';
@@ -40,20 +67,6 @@ const newRound = () => {
 }
 
 const advanceRound = () => currentRoundNumber++;
-
-let target; 
-let computerScoreDisplay = document.getElementById('computer-score');
-let computerGuessDisplay = document.getElementById('computer-guess');
-let computerWinsDisplay = document.getElementById('computer-wins');
-
-let roundNumDisplay = document.getElementById('round-number');
-let targetNumDisplay = document.getElementById('target-number');
-
-let playerScoreDisplay = document.getElementById('player-score');
-let playerGuessInput = document.getElementById('player-guess');
-
-let guessBtn = document.getElementById('guess-btn');
-let nextRoundBtn = document.getElementById('next-btn');
 
 guessBtn.addEventListener('click', () => {
 	target = generateTarget();
@@ -68,10 +81,9 @@ guessBtn.addEventListener('click', () => {
 	updateScore(winner);
 
 	if(playerIsWinner) {
-		guessBtn.innerText = 'Congrats, You Win!';
-		guessBtn.style.backgroundColor = "#39CCCC";
-		guessBtn.style.color = "#01FF70";
-		guessBtn.style.fontWeight = "900";
+		guessBtn.innerText = 'Congrats! You Win :D';
+		guessBtn.style.backgroundColor = "#01FF70";
+		guessBtn.style.color = "#001f3f";
 	} 
 	else
 		computerWinsDisplay.innerText = 'Computer Wins :|';
@@ -79,16 +91,17 @@ guessBtn.addEventListener('click', () => {
 	playerScoreDisplay.innerText = playerScore;
 	computerScoreDisplay.innerText = computerScore;
 
+	compareScore(playerScore, computerScore);
+
+	guessBtn.setAttribute('disabled', true)
 	subtractButton.setAttribute('disabled', true);
 	addButton.setAttribute('disabled',true);
-	guessBtn.setAttribute('disabled', true)
 	nextRoundBtn.removeAttribute('disabled');
 });
 
 nextRoundBtn.addEventListener('click', () => {
 	advanceRound();
 	roundNumDisplay.innerText = currentRoundNumber;
-
 	newRound();
 });
 
@@ -109,15 +122,14 @@ subtractButton.addEventListener('click', () => {
 });
 
 const handleNumLimits = value => {
-  if (value > 0 && value <= 9) {
+  if (value > 0 && value < 9) {
     subtractButton.removeAttribute('disabled');
     addButton.removeAttribute('disabled');
   } 
-  else if (value > 9)
+  else if (value >= 9)
     addButton.setAttribute('disabled', true);
-  else if (value <= 0) {
+  else if (value <= 0)
     subtractButton.setAttribute('disabled', true);
-  }
 }
 
 playerGuessInput.addEventListener('input', function(e) {

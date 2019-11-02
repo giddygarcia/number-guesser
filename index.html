@@ -5,12 +5,12 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-		<header>Number Guesser Game!</header>
+	<header>Number Guesser</header>
 	<div class="container">
 		<div class="box-wrapper">
 			<div class = "box" id="computer-box">
 				<div class="name-label">Computer</div>
-				<div class="score-label"> Score: <span id="computer-score">0</span> </div>
+				<div class="score-label" id="computer-score-label"> Score: <span id="computer-score">0</span> </div>
 				<div class="guess" id="computer-guess"> ? </div>
 				<div id="computer-wins"> </div>		
 			</div>
@@ -22,11 +22,11 @@
 
 			<div class = "box" id="player-box">
 				<div class="name-label"><span id="player-name">You</span></div>
-				<div class="score-label"> Score: <span id="player-score">0</span> </div>
+				<div class="score-label" id="player-score-label"> Score: <span id="player-score">0</span> </div>
 				<div class="guess" id="player-guess"> 0 </div>	
-				<button class="num-control left" id="sub-btn" disabled> - </button>		
-				<button class="num-control right" id="add-btn"> + </button>
-				<button class="text-btn" id="guess-btn"> Make this Guess </button>
+				<button class="num-control" id="sub-btn" disabled> - </button>		
+				<button class="num-control" id="add-btn"> + </button>
+				<button class="text-btn" id="guess-btn"> Make </span> this Guess </button>
 			</div>
 		</div>
 
@@ -35,14 +35,17 @@
 	</div>
 
 		<div class="instructions">
-			<div class="instruction">
-				Step 1
+			<div class="instruction" id="instruction-one">
+				<h1 id="instr-header-one">Step 1</h1>
+				<p id="instr-text-one"> Make a guess between 0 and 9 </p>
+			</div>
+			<div class="instruction" id="instruction-two">
+				<h1>Step 2</h1>
+				<p>Make the guess and hope for the best</p>
 			</div>
 			<div class="instruction">
-				Step 2
-			</div>
-			<div class="instruction">
-				Step 3
+				<h1>Step 3</h1>
+				<p>Click 'Next Round' to play again</p>
 			</div>
 		</div>
 
