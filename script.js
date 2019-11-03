@@ -107,7 +107,7 @@ nextRoundBtn.addEventListener('click', () => {
 
 let addButton = document.getElementById('add-btn');
 let subtractButton = document.getElementById('sub-btn');
-const count = 0;
+var count = 0;
 
 addButton.addEventListener('click', () => {
 	count++;
